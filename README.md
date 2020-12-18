@@ -1,6 +1,6 @@
 # Green API - Partners Postman Collection
 
-This is a Postman collection of [Green API](https://green-api.com/) for Partners. It provides access to manage parner's WhatsApp instances. The provided environment contains the list of variables referenced by the API collection.
+This is a Postman collection of [Green API](https://green-api.com/) for Partners. It provides access to manage partner's WhatsApp instances. The provided environment contains the list of variables referenced by the API collection.
 
 See docs for usage.
 https://green-api.com/docs/partners/
