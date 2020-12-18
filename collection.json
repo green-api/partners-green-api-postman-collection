@@ -1,0 +1,251 @@
+{
+	"info": {
+		"_postman_id": "4475b8d3-420d-4bcd-b28f-95e9426a3f80",
+		"name": "Green API partner",
+		"description": "Методы API для партнеров",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Прокси",
+			"item": [
+				{
+					"name": "getProxySettings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/partner/getProxySettings/{{partnerToken}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"partner",
+								"getProxySettings",
+								"{{partnerToken}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "setProxySettings",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"typeAccount\": \"production\",\n    \"proxyType\": \"private\",\n    \"limitAccountsPerProxy\": 3,\n    \"showProxy\": false\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/partner/setProxySettings/{{partnerToken}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"partner",
+								"setProxySettings",
+								"{{partnerToken}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAvailableCountries",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/partner/getAvailableCountries/{{partnerToken}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"partner",
+								"getAvailableCountries",
+								"{{partnerToken}}"
+							]
+						},
+						"description": "Метод предназначен для получения списка доступных стран, для назначения прокси инстансу аккаунта;\r\n\r\nможно выполнить POST или GET запрос;\r\n\r\nв случае неудачи, отдается ответ с HTTP статусом 400 и текстом ошибки.\r\n\r\n**Параметры:**\r\n\r\n**Ответ:** (JSON)\r\n\r\nмассив, содержащий коды доступных стран по стандарту ISO 3166-2 (string:2)."
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Аккаунты",
+			"item": [
+				{
+					"name": "getInstances",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/partner/getInstances/{{partnerToken}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"partner",
+								"getInstances",
+								"{{partnerToken}}"
+							]
+						},
+						"description": "Метод предназначен для получения всех инстансов аккаунтов созданных партнером;\r\n\r\nможно выполнить POST или GET запрос;\r\n\r\nдля получения параметров инстансов аккаунтов используются соответствующие методы API для инстансов аккаунтов;\r\n\r\nв случае неудачи отдается ответ с HTTP статусом 400 и текстом ошибки.\r\n\r\n**Параметры:**\r\n\r\n**Ответ:** (JSON)\r\n\r\nМассив объектов о созданных партнером инстансах аккаунтов с полями:\r\n\r\n* idInstance - идентификатор инстанса аккаунта (int);\r\n\r\n* typeInstance - тип мессенджера для инстанса аккаунта (string);\r\n\r\n* partnerUserUiid - идентификатор пользователя у партнера в формате UIID (string: 36 символов);\r\n\r\n* timeCreated - время создания инстанса;\r\n\r\n* apiTokenInstance - токен API инстанса аккаунта (string:50);\r\n\r\n* apiUrlInstance - URL для методов API инстанса аккаунта (string);"
+					},
+					"response": []
+				},
+				{
+					"name": "createInstance",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"typeInstance\": \"whatsapp\",\n    \"typeAccount\": \"trial\",\n    \"countryInstance\": \"ru\",\n    \"webhookUrl\": \"\",\n    \"delaySendMessagesMilliseconds\": 1000,\n    \"markIncomingMessagesReaded\": \"yes\",\n    \"proxyInstance\": \"\",\n    \"partnerUserUiid\": \"325471d4-69aa-42c5-9-53-2076274aeef9\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/partner/createInstance/{{partnerToken}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"partner",
+								"createInstance",
+								"{{partnerToken}}"
+							]
+						},
+						"description": "Метод предназначен для создания инстанса аккаунта мессенджера от имени партнера;\n\nв случае неудачи, отдается ответ с HTTP статусом 400 и текстом ошибки. Коды и описание возможных ошибок:\n\n* 100: Temporarily no free instances. Try after a while, we are already fixing this problem. (Временно нет свободных инстансов. Попробуйте через некоторое время, мы уже устраняем эту проблему.);\n\n* 200: Error saving instance. Try creating the instance again. (Ошибка при сохранении инстанса. Попробуйте создать инстанс заново.);\n\n\n**Параметры:** (JSON)\n\ntypeInstance - тип мессенджера для инстанса аккаунта (string);\n\ncountryInstance - страна инстанса аккаунта по стандарту ISO 3166-2 (string:2), не обязательный параметр, если не указывать по умолчанию будет ru;\n* доступные страны: \"pl\", \"cz\", \"nl\", \"ru\", \"ee\", \"ua\", \"br\", \"us\", \"it\", \"be\", \"fi\", \"at\", \"by\", \"no\", \"fr\", \"kz\", \"in\", \"gr\", \"ch\", \"de\", \"es\", \"se\", \"gb\", \"cn\", \"tr\", \"ro\", \"ca\"\n\nwebhookUrl - URL для отправки webhook оповещений (string), необязательный параметр;\n\ndelaySendMessagesMilliseconds - задержка между отправкой исходящих сообщений в миллисекундах (int), необязательный параметр, по умолчанию 3 секунды, минимум 500 мс;\n\nmarkIncomingMessagesReaded - отмечать входящие сообщения прочитанными или нет (yes/no), необязательный параметр, по умолчанию yes (входящие сообщения помечаются прочитанными);\n\nproxyInstance - прокси для инстанса аккаунта (string:{ip}:{port}:{login}:{password}), необязательный параметр, при отсутствии прокси будет назначено в соответствии с параметром страны;\n\npartnerUserUiid - идентификатор пользователя у партнера в формате UIID (string: 36 символов). Параметр необходим для учета инстансов на стороне партнера;\n\n**Ответ:** (JSON)\n\nidInstance - идентификатор инстанса аккаунта (int);\n\napiTokenInstance - токен API инстанса аккаунта (string:50);\n\napiUrlInstance - URL для методов API инстанса аккаунта (string);\n\ntypeInstance - тип мессенджера для инстанса аккаунта (string);"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteInstanceAccount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"idInstance\": 0000\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/partner/deleteInstanceAccount/{{partnerToken}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"partner",
+								"deleteInstanceAccount",
+								"{{partnerToken}}"
+							]
+						},
+						"description": "Метод предназначен для удаления инстанса аккаунта партнера;\n\nв случае неудачи, отдается ответ с HTTP статусом 400 и текстом ошибки.\n\n**Параметры:** (JSON)\n\nidInstance - идентификатор инстанса аккаунта (int), обязательный параметр, если не указан partnerUserUiid;\n\npartnerUserUiid - идентификатор пользователя у партнера в формате UIID (string:36) обязательный параметр, если не указан idInstance;\n\n**Ответ:** (JSON)\n\ndeleteInstanceAccount - флаг удаления инстанса аккаунта;"
+					},
+					"response": []
+				},
+				{
+					"name": "changeTypeAccount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"idInstance\": 9075,\n    \"typeAccount\": \"vip\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/partner/changeTypeAccount/{{partnerToken}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"partner",
+								"changeTypeAccount",
+								"{{partnerToken}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "changeInstanceApiToken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"idInstance\": 2,\r\n\t\"partnerUserUiid\": \"00000000-0000-0000-0000-00000000000\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/partner/changeInstanceApiToken/{{partnerToken}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"partner",
+								"changeInstanceApiToken",
+								"{{partnerToken}}"
+							]
+						},
+						"description": "Метод предназначен для смены токена API инстанса аккаунта партнера;\n\nв случае неудачи, отдается ответ с HTTP статусом 400 и текстом ошибки\n\n**Параметры:** (JSON)\n\nidInstance - идентификатор инстанса аккаунта (int), обязательный параметр, если не указан partnerUserUiid;\n\npartnerUserUiid - идентификатор пользователя у партнера в формате UIID (string:36) обязательный параметр, если не указан idInstance;\n\n**Ответ:** (JSON)\n\napiTokenInstance - новый токен API инстанса аккаунта;"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Партнер",
+			"item": [
+				{
+					"name": "changePartnerApiToken",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/partner/changePartnerApiToken/{{partnerToken}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"partner",
+								"changePartnerApiToken",
+								"{{partnerToken}}"
+							]
+						},
+						"description": "Метод предназначен для смены токена API партнера;\r\n\r\nнеобходимо выполнить POST или GET запрос;\r\n\r\nв случае неудачи, отдается ответ с HTTP статусом 400 и текстом ошибки.\r\n\r\n**Параметры:**\r\n\r\n**Ответ:** (JSON)\r\n\r\npartnerToken - новый токен API партнера;"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
