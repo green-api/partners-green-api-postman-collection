@@ -3,7 +3,7 @@
 This is a Postman collection of [Green API](https://green-api.com/) for Partners. It provides access to manage partner's WhatsApp instances. The provided environment contains the list of variables referenced by the API collection.
 
 See docs for usage.
-https://green-api.com/docs/partners/
+https://docs.google.com/document/d/1LmGvGPGSlbt9v6nRcVyuQDQZeW8FK8ZKhW5gBbU2Lds/edit?usp=sharing
 
 ## Requirements
 
@@ -15,7 +15,7 @@ The Green API Postman Collection and Environment requires the installation of [P
 2) Open Postman, click on Import and select the two json files.
 3) Once imported, a new API collection will be created, along with the environment.
 
-See [docs](https://green-api.com/docs/partners/) for details.
+See [docs](https://docs.google.com/document/d/1LmGvGPGSlbt9v6nRcVyuQDQZeW8FK8ZKhW5gBbU2Lds/edit?usp=sharing) for details.
 
 ## License
 
