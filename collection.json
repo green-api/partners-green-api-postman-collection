@@ -1,84 +1,11 @@
 {
 	"info": {
-		"_postman_id": "4475b8d3-420d-4bcd-b28f-95e9426a3f80",
+		"_postman_id": "86f4c322-a9ca-49f5-b1b4-a136b403d7db",
 		"name": "Green API partner",
 		"description": "Методы API для партнеров",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
-		{
-			"name": "Прокси",
-			"item": [
-				{
-					"name": "getProxySettings",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{host}}/partner/getProxySettings/{{partnerToken}}",
-							"host": [
-								"{{host}}"
-							],
-							"path": [
-								"partner",
-								"getProxySettings",
-								"{{partnerToken}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "setProxySettings",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n    \"typeAccount\": \"production\",\n    \"proxyType\": \"private\",\n    \"limitAccountsPerProxy\": 3,\n    \"showProxy\": false\n}\n",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{host}}/partner/setProxySettings/{{partnerToken}}",
-							"host": [
-								"{{host}}"
-							],
-							"path": [
-								"partner",
-								"setProxySettings",
-								"{{partnerToken}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "getAvailableCountries",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{host}}/partner/getAvailableCountries/{{partnerToken}}",
-							"host": [
-								"{{host}}"
-							],
-							"path": [
-								"partner",
-								"getAvailableCountries",
-								"{{partnerToken}}"
-							]
-						},
-						"description": "Метод предназначен для получения списка доступных стран, для назначения прокси инстансу аккаунта;\r\n\r\nможно выполнить POST или GET запрос;\r\n\r\nв случае неудачи, отдается ответ с HTTP статусом 400 и текстом ошибки.\r\n\r\n**Параметры:**\r\n\r\n**Ответ:** (JSON)\r\n\r\nмассив, содержащий коды доступных стран по стандарту ISO 3166-2 (string:2)."
-					},
-					"response": []
-				}
-			],
-			"protocolProfileBehavior": {}
-		},
 		{
 			"name": "Аккаунты",
 			"item": [
@@ -161,34 +88,6 @@
 					"response": []
 				},
 				{
-					"name": "changeTypeAccount",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n\t\"idInstance\": 9075,\n    \"typeAccount\": \"vip\"\n}\n",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{host}}/partner/changeTypeAccount/{{partnerToken}}",
-							"host": [
-								"{{host}}"
-							],
-							"path": [
-								"partner",
-								"changeTypeAccount",
-								"{{partnerToken}}"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "changeInstanceApiToken",
 					"request": {
 						"method": "POST",
@@ -217,11 +116,10 @@
 					},
 					"response": []
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
-			"name": "Партнер",
+			"name": "Доступ",
 			"item": [
 				{
 					"name": "changePartnerApiToken",
@@ -244,8 +142,46 @@
 					"response": []
 				}
 			],
-			"protocolProfileBehavior": {}
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
 		}
 	],
-	"protocolProfileBehavior": {}
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
 }
