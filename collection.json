@@ -36,7 +36,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"typeInstance\": \"whatsapp\",\n    \"typeAccount\": \"trial\",\n    \"countryInstance\": \"ru\",\n    \"webhookUrl\": \"\",\n    \"delaySendMessagesMilliseconds\": 1000,\n    \"markIncomingMessagesReaded\": \"yes\",\n    \"proxyInstance\": \"\",\n    \"partnerUserUiid\": \"325471d4-69aa-42c5-9-53-2076274aeef9\"\n}",
+							"raw": "{\n    \"typeInstance\": \"whatsapp\",\n    \"typeAccount\": \"production\",\n    \"webhookUrl\": \"\",\n    \"delaySendMessagesMilliseconds\": 1000,\n    \"markIncomingMessagesReaded\": \"yes\",\n    \"partnerUserUiid\": \"325471d4-69aa-42c5-9-53-2076274aeef9\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -94,7 +94,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\t\"idInstance\": 2,\r\n\t\"partnerUserUiid\": \"00000000-0000-0000-0000-00000000000\"\r\n}\r\n",
+							"raw": "{\r\n\t\"idInstance\": 0000\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
