@@ -1,9 +1,10 @@
 {
 	"info": {
-		"_postman_id": "86f4c322-a9ca-49f5-b1b4-a136b403d7db",
+		"_postman_id": "cfa3e66f-39fc-4a6f-a307-8cd56f8f322c",
 		"name": "Green API partner",
 		"description": "Методы API для партнеров",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3630042"
 	},
 	"item": [
 		{
@@ -27,7 +28,97 @@
 						},
 						"description": "Метод предназначен для получения всех инстансов аккаунтов созданных партнером;\r\n\r\nможно выполнить POST или GET запрос;\r\n\r\nдля получения параметров инстансов аккаунтов используются соответствующие методы API для инстансов аккаунтов;\r\n\r\nв случае неудачи отдается ответ с HTTP статусом 400 и текстом ошибки.\r\n\r\n**Параметры:**\r\n\r\n**Ответ:** (JSON)\r\n\r\nМассив объектов о созданных партнером инстансах аккаунтов с полями:\r\n\r\n* idInstance - идентификатор инстанса аккаунта (int);\r\n\r\n* typeInstance - тип мессенджера для инстанса аккаунта (string);\r\n\r\n* partnerUserUiid - идентификатор пользователя у партнера в формате UIID (string: 36 символов);\r\n\r\n* timeCreated - время создания инстанса;\r\n\r\n* apiTokenInstance - токен API инстанса аккаунта (string:50);\r\n\r\n* apiUrlInstance - URL для методов API инстанса аккаунта (string);"
 					},
-					"response": []
+					"response": [
+						{
+							"name": "ok",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/partner/getInstances/{{partnerToken}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"partner",
+										"getInstances",
+										"{{partnerToken}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.14.0 (Ubuntu)"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 08 Jun 2022 06:22:22 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "36520"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "-1"
+								},
+								{
+									"key": "X-RateLimit-Requested-Tokens",
+									"value": "1"
+								},
+								{
+									"key": "X-RateLimit-Burst-Capacity",
+									"value": "20"
+								},
+								{
+									"key": "X-RateLimit-Replenish-Rate",
+									"value": "10"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "*"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8eca-Bxy09zPvcFoGw1oY+Z0Qgy7eV/8\""
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"idInstance\": 1101728004,\n        \"name\": \"Instance 1101728004\",\n        \"typeInstance\": \"whatsapp\",\n        \"typeAccount\": \"\",\n        \"partnerUserUiid\": \"\",\n        \"timeCreated\": \"2022-06-03T18:39:44\",\n        \"timeDeleted\": \"0001-01-01T00:00:00\",\n        \"apiTokenInstance\": \"1f2485e80f474293b935f77d78c64e76fa4bdceb417a4998a4\",\n        \"deleted\": false,\n        \"tariff\": \"PARTNER_23\",\n        \"expirationDate\": \"2022-06-09T18:39:44\",\n        \"isExpired\": false\n    },\n    {\n        \"idInstance\": 1101728204,\n        \"name\": \"Instance 1101728204\",\n        \"typeInstance\": \"whatsapp\",\n        \"typeAccount\": \"\",\n        \"partnerUserUiid\": \"\",\n        \"timeCreated\": \"2022-06-07T10:36:48\",\n        \"timeDeleted\": \"2022-06-07T10:37:00\",\n        \"apiTokenInstance\": \"35d8b4907f8e494289b1d5f999e3582940ceffc413bf4a76b1\",\n        \"deleted\": true,\n        \"tariff\": \"PARTNER_23\",\n        \"expirationDate\": \"2022-06-08T10:36:48\",\n        \"isExpired\": false\n    },\n    {\n        \"idInstance\": 1101728478,\n        \"name\": \"Instance 1101728478\",\n        \"typeInstance\": \"whatsapp\",\n        \"typeAccount\": \"\",\n        \"partnerUserUiid\": \"\",\n        \"timeCreated\": \"2022-06-08T09:12:13\",\n        \"timeDeleted\": \"2022-06-08T09:19:04\",\n        \"apiTokenInstance\": \"c8b0474542154e0ead529eb3861ca5f483c346eb00564f64a7\",\n        \"deleted\": true,\n        \"tariff\": \"PARTNER_23\",\n        \"expirationDate\": \"2022-06-09T09:12:13\",\n        \"isExpired\": false\n    }\n]"
+						}
+					]
 				},
 				{
 					"name": "createInstance",
@@ -36,7 +127,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"typeInstance\": \"whatsapp\",\n    \"typeAccount\": \"production\",\n    \"webhookUrl\": \"\",\n    \"delaySendMessagesMilliseconds\": 1000,\n    \"markIncomingMessagesReaded\": \"yes\",\n    \"partnerUserUiid\": \"325471d4-69aa-42c5-9-53-2076274aeef9\"\n}",
+							"raw": "{\n    \"webhookUrl\": \"https://mysite.com/webhook/green-api/\",\n    \"webhookUrlToken\": \"f93537eb3e8fed66847b5bd\",\n    \"delaySendMessagesMilliseconds\": 1000,\n    \"markIncomingMessagesReaded\": \"no\",\n    \"markIncomingMessagesReadedOnReply\": \"no\",\n    \"outgoingWebhook\": \"yes\",\n    \"outgoingMessageWebhook\": \"yes\",\n    \"incomingWebhook\": \"yes\",\n    \"deviceWebhook\": \"no\",\n    \"stateWebhook\": \"no\",\n    \"enableMessagesHistory\": \"no\",\n    \"keepOnlineStatus\": \"no\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -56,7 +147,106 @@
 						},
 						"description": "Метод предназначен для создания инстанса аккаунта мессенджера от имени партнера;\n\nв случае неудачи, отдается ответ с HTTP статусом 400 и текстом ошибки. Коды и описание возможных ошибок:\n\n* 100: Temporarily no free instances. Try after a while, we are already fixing this problem. (Временно нет свободных инстансов. Попробуйте через некоторое время, мы уже устраняем эту проблему.);\n\n* 200: Error saving instance. Try creating the instance again. (Ошибка при сохранении инстанса. Попробуйте создать инстанс заново.);\n\n\n**Параметры:** (JSON)\n\ntypeInstance - тип мессенджера для инстанса аккаунта (string);\n\ncountryInstance - страна инстанса аккаунта по стандарту ISO 3166-2 (string:2), не обязательный параметр, если не указывать по умолчанию будет ru;\n* доступные страны: \"pl\", \"cz\", \"nl\", \"ru\", \"ee\", \"ua\", \"br\", \"us\", \"it\", \"be\", \"fi\", \"at\", \"by\", \"no\", \"fr\", \"kz\", \"in\", \"gr\", \"ch\", \"de\", \"es\", \"se\", \"gb\", \"cn\", \"tr\", \"ro\", \"ca\"\n\nwebhookUrl - URL для отправки webhook оповещений (string), необязательный параметр;\n\ndelaySendMessagesMilliseconds - задержка между отправкой исходящих сообщений в миллисекундах (int), необязательный параметр, по умолчанию 3 секунды, минимум 500 мс;\n\nmarkIncomingMessagesReaded - отмечать входящие сообщения прочитанными или нет (yes/no), необязательный параметр, по умолчанию yes (входящие сообщения помечаются прочитанными);\n\nproxyInstance - прокси для инстанса аккаунта (string:{ip}:{port}:{login}:{password}), необязательный параметр, при отсутствии прокси будет назначено в соответствии с параметром страны;\n\npartnerUserUiid - идентификатор пользователя у партнера в формате UIID (string: 36 символов). Параметр необходим для учета инстансов на стороне партнера;\n\n**Ответ:** (JSON)\n\nidInstance - идентификатор инстанса аккаунта (int);\n\napiTokenInstance - токен API инстанса аккаунта (string:50);\n\napiUrlInstance - URL для методов API инстанса аккаунта (string);\n\ntypeInstance - тип мессенджера для инстанса аккаунта (string);"
 					},
-					"response": []
+					"response": [
+						{
+							"name": "ok",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"webhookUrl\": \"https://mysite.com/webhook/green-api/\",\n    \"webhookUrlToken\": \"f93537eb3e8fed66847b5bd\",\n    \"delaySendMessagesMilliseconds\": 1000,\n    \"markIncomingMessagesReaded\": \"no\",\n    \"markIncomingMessagesReadedOnReply\": \"no\",\n    \"outgoingWebhook\": \"yes\",\n    \"outgoingMessageWebhook\": \"yes\",\n    \"incomingWebhook\": \"yes\",\n    \"deviceWebhook\": \"no\",\n    \"stateWebhook\": \"no\",\n    \"enableMessagesHistory\": \"no\",\n    \"keepOnlineStatus\": \"no\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/partner/createInstance/{{partnerToken}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"partner",
+										"createInstance",
+										"{{partnerToken}}"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.14.0 (Ubuntu)"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 08 Jun 2022 06:12:13 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "123"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "-1"
+								},
+								{
+									"key": "X-RateLimit-Requested-Tokens",
+									"value": "1"
+								},
+								{
+									"key": "X-RateLimit-Burst-Capacity",
+									"value": "20"
+								},
+								{
+									"key": "X-RateLimit-Replenish-Rate",
+									"value": "10"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "*"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9d-dqQIaJH8h0FOQJbayDawuDe7k6w\""
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"idInstance\": 1101728000,\n    \"apiTokenInstance\": \"c1b0474542144e0ead529eb4861ca5f583c346eb00564f64a7\",\n    \"typeInstance\": \"whatsapp\"\n}"
+						}
+					]
 				},
 				{
 					"name": "deleteInstanceAccount",
@@ -65,7 +255,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n\t\"idInstance\": 0000\r\n}\r\n",
+							"raw": "{\r\n\t\"idInstance\": 1101000000\r\n}\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -85,81 +275,106 @@
 						},
 						"description": "Метод предназначен для удаления инстанса аккаунта партнера;\n\nв случае неудачи, отдается ответ с HTTP статусом 400 и текстом ошибки.\n\n**Параметры:** (JSON)\n\nidInstance - идентификатор инстанса аккаунта (int), обязательный параметр, если не указан partnerUserUiid;\n\npartnerUserUiid - идентификатор пользователя у партнера в формате UIID (string:36) обязательный параметр, если не указан idInstance;\n\n**Ответ:** (JSON)\n\ndeleteInstanceAccount - флаг удаления инстанса аккаунта;"
 					},
-					"response": []
-				},
-				{
-					"name": "changeInstanceApiToken",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n\t\"idInstance\": 0000\r\n}\r\n",
-							"options": {
-								"raw": {
-									"language": "json"
+					"response": [
+						{
+							"name": "ok",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n\t\"idInstance\": 1101728478\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/partner/deleteInstanceAccount/{{partnerToken}}",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"partner",
+										"deleteInstanceAccount",
+										"{{partnerToken}}"
+									]
 								}
-							}
-						},
-						"url": {
-							"raw": "{{host}}/partner/changeInstanceApiToken/{{partnerToken}}",
-							"host": [
-								"{{host}}"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.14.0 (Ubuntu)"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 08 Jun 2022 06:19:05 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "30"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "-1"
+								},
+								{
+									"key": "X-RateLimit-Requested-Tokens",
+									"value": "1"
+								},
+								{
+									"key": "X-RateLimit-Burst-Capacity",
+									"value": "20"
+								},
+								{
+									"key": "X-RateLimit-Replenish-Rate",
+									"value": "10"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Access-Control-Allow-Headers",
+									"value": "*"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"40-PWJZ8aBlp520SUbpKxpE3BQwhUc\""
+								}
 							],
-							"path": [
-								"partner",
-								"changeInstanceApiToken",
-								"{{partnerToken}}"
-							]
-						},
-						"description": "Метод предназначен для смены токена API инстанса аккаунта партнера;\n\nв случае неудачи, отдается ответ с HTTP статусом 400 и текстом ошибки\n\n**Параметры:** (JSON)\n\nidInstance - идентификатор инстанса аккаунта (int), обязательный параметр, если не указан partnerUserUiid;\n\npartnerUserUiid - идентификатор пользователя у партнера в формате UIID (string:36) обязательный параметр, если не указан idInstance;\n\n**Ответ:** (JSON)\n\napiTokenInstance - новый токен API инстанса аккаунта;"
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Доступ",
-			"item": [
-				{
-					"name": "changePartnerApiToken",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{host}}/partner/changePartnerApiToken/{{partnerToken}}",
-							"host": [
-								"{{host}}"
-							],
-							"path": [
-								"partner",
-								"changePartnerApiToken",
-								"{{partnerToken}}"
-							]
-						},
-						"description": "Метод предназначен для смены токена API партнера;\r\n\r\nнеобходимо выполнить POST или GET запрос;\r\n\r\nв случае неудачи, отдается ответ с HTTP статусом 400 и текстом ошибки.\r\n\r\n**Параметры:**\r\n\r\n**Ответ:** (JSON)\r\n\r\npartnerToken - новый токен API партнера;"
-					},
-					"response": []
-				}
-			],
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
+							"cookie": [],
+							"body": "{\n    \"deleteInstanceAccount\": true\n}"
+						}
+					]
 				}
 			]
 		}
