@@ -20,4 +20,4 @@ See [docs](https://green-api.com/en/docs/postman-collection/) for details.
 
 ## License
 
-Please refer to the [LICENSE](https://github.com/green-api/green-api-postman-collection/blob/master/LICENSE) file.
+Please refer to the [LICENSE](https://github.com/green-api/partners-green-api-postman-collection/blob/master/LICENSE) file.
