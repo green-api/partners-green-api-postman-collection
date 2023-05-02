@@ -20,4 +20,4 @@
 
 ## Лицензия
 
-Пожалуйста, смотрите фаил [ЛИЦЕНЗИИ](https://github.com/green-api/green-api-postman-collection/blob/master/LICENSE).
+Пожалуйста, смотрите фаил [ЛИЦЕНЗИИ](https://github.com/green-api/partners-green-api-postman-collection/blob/master/LICENSE).
